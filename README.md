@@ -6,7 +6,7 @@
 
 ***Cálculo de Energia:*** O sistema calcula a quantidade de energia em quilowatts-hora (kWh) gerada com base nas informações inseridas pelo usuario.
 
-***Cálculo de Lucro:*** Com base na energia gerada e nos dados fornecidos pelo usuário, o usuário inseri o valor do (kwh) da sua regiao em Reais e com base na energia gerada e fornecida o SolarMetrics calcula o lucro financeiro obtido.
+***Cálculo de Lucro:*** O usuário inseri o valor do (kwh) da sua região em reais, e com base na energia gerada o SolarMetrics calcula o lucro financeiro obtido.
 
 # Como Funciona
 ***Inserir Dados:*** O usuário deve fornecer informações sobre o período (semanas, dias e meses) e o total de energia gerada pelo seu sistema solar no período especificado.
