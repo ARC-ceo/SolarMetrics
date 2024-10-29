@@ -1,3 +1,4 @@
+![Logo](./logo.jpg)
  # SolarMetrics 
  SolarMetrics é um sistema desenvolvido pelo Grupo ARC para os usuários que possuem sistemas solares em suas residências. Nosso objetivo é fornecer uma ferramenta fácil de usar, para calcular o desempenho e o retorno financeiro dos sistemas solares instalados.
 
