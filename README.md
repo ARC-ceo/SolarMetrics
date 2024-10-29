@@ -1,5 +1,5 @@
 
- ![Logo]([https://exemplo.com/logo.png](https://cdn.discordapp.com/attachments/1116706891779813480/1300794330042204220/logo.jpg?ex=6722229f&is=6720d11f&hm=ae61d17abe9e09e6daa0fec1c09eef7f912b2598049a27be40b2e33d5427d0ff&))
+ ![Logo](https://cdn.discordapp.com/attachments/1116706891779813480/1300794330042204220/logo.jpg)
  # SolarMetrics 
  SolarMetrics é um sistema desenvolvido pelo Grupo ARC para os usuários que possuem sistemas solares em suas residências. Nosso objetivo é fornecer uma ferramenta fácil de usar, para calcular o desempenho e o retorno financeiro dos sistemas solares instalados.
 
