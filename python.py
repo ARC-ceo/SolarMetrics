@@ -98,6 +98,16 @@ def obter_dados_energia():
             print("Valor inválido. Por favor, insira um número válido para o consumo de energia.")
     return dados_energia
 
+def calcular_lucro_e_porcentagem(energia_gerada, consumo):
+    valor_kwh = float(input("Digite o valor do kWh em reais: "))
+    lucro = round(valor_kwh * energia_gerada, 2)
+    print(f"Lucro gerado: R$ {lucro:.2f}")
+    if energia_gerada == 0:
+        porcentagem = 0 
+    else:
+        porcentagem = (consumo / energia_gerada) * 100
+    print(f"Porcentagem de uso: {porcentagem:.2f}%")
+
 
 def registrar_usuario(arquivo,usuarios,nome,instalacao):
     if usuarios:
@@ -174,31 +184,35 @@ def excluir_usuario(usuarios, id_usuario,arquivo):
 
 
 #  MAIN 
-usuarios = carregar_usuarios(arquivo_usuarios)
-nome_usuario = input("Por favor, digite seu nome para continuar: ")
-id_usuario, info_usuario = buscar_cadastro (usuarios, nome_usuario)
-if info_usuario==None:
-    linha_decorativa()
-    print(f"Olá, {nome_usuario}. Não conseguimos encontrar seu cadastro.")
-    print("Vamos fazer seu cadastro agora!")
-    nome_instalacao = input("Qual nome você gostaria de colocar para sua instalação solar? ")
-    registrar_usuario(arquivo_usuarios,usuarios,nome_usuario,nome_instalacao)
-    print(f"Você se cadastrou com sucesso! Nome da instalação: {nome_instalacao}")
-    linha_decorativa()
-    id_usuario, info_usuario = buscar_cadastro (usuarios, nome_usuario)
-while(1):
-    opcao = exibir_menu(nome_usuario)
-    if opcao == '1':
-        print("Iniciando uma nova métrica...")
-        dados_energia = obter_dados_energia()
-        adicionar_relatorio(usuarios, id_usuario,dados_energia,arquivo_usuarios)
-    elif opcao == '2':
-        print("Visualizando a última métrica...")
-        exibir_relatorio(info_usuario)
-    elif opcao == '3':
-        print("Apagando usuário...")
-        excluir_usuario(usuarios,id_usuario,arquivo_usuarios)
-        break
-    elif opcao == '4':
-        print("Aplicativo encerrado. Até logo!")
-        break
+def main():
+    usuarios = carregar_usuarios(arquivo_usuarios)
+    nome_usuario = input("Por favor, digite seu nome para continuar: ")
+    id_usuario, info_usuario = buscar_cadastro(usuarios, nome_usuario)
+    if info_usuario==None:
+        linha_decorativa()
+        print(f"Olá, {nome_usuario}. Não conseguimos encontrar seu cadastro.")
+        print("Vamos fazer seu cadastro agora!")
+        nome_instalacao = input("Qual nome você gostaria de colocar para sua instalação solar? ")
+        registrar_usuario(arquivo_usuarios,usuarios,nome_usuario,nome_instalacao)
+        print(f"Você se cadastrou com sucesso! Nome da instalação: {nome_instalacao}")
+        linha_decorativa()
+        id_usuario, info_usuario = buscar_cadastro (usuarios, nome_usuario)
+    while(True):
+        opcao = exibir_menu(nome_usuario)
+        if opcao == '1':
+            print("Iniciando uma nova métrica...")
+            dados_energia = obter_dados_energia()
+            adicionar_relatorio(usuarios, id_usuario,dados_energia,arquivo_usuarios)
+        elif opcao == '2':
+            print("Visualizando a última métrica...")
+            exibir_relatorio(info_usuario)
+        elif opcao == '3':
+            print("Apagando usuário...")
+            excluir_usuario(usuarios,id_usuario,arquivo_usuarios)
+            break
+        elif opcao == '4':
+            print("Aplicativo encerrado. Até logo!")
+            break
+
+if __name__ == "__main__":
+    main()
