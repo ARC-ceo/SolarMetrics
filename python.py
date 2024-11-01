@@ -61,7 +61,7 @@ def obter_dados_energia():
             break
         except ValueError:
             print("Formato de data inválido. Por favor, insira no formato DD-MM-AAAA.")
-    
+
     while True:
         try:
             data_fim = input("Digite a data de término (formato DD-MM-AAAA): ")
@@ -98,8 +98,15 @@ def obter_dados_energia():
             print("Valor inválido. Por favor, insira um número válido para o consumo de energia.")
     return dados_energia
 
-def calcular_lucro_e_porcentagem(energia_gerada, consumo):
-    valor_kwh = float(input("Digite o valor do kWh em reais: "))
+def calcular_lucro_e_porcentagem(dados_energia):
+    energia_gerada = dados_energia['geracao']
+    consumo = dados_energia['consumo']
+    while True:
+        try:
+            valor_kwh = float(input("Digite o valor do kWh em reais: "))
+            break  
+        except ValueError:
+            print("Por favor, digite um número válido.")
     lucro = round(valor_kwh * energia_gerada, 2)
     print(f"Lucro gerado: R$ {lucro:.2f}")
     if energia_gerada == 0:
@@ -203,6 +210,8 @@ def main():
             print("Iniciando uma nova métrica...")
             dados_energia = obter_dados_energia()
             adicionar_relatorio(usuarios, id_usuario,dados_energia,arquivo_usuarios)
+            linha_decorativa()
+            calcular_lucro_e_porcentagem(dados_energia)
         elif opcao == '2':
             print("Visualizando a última métrica...")
             exibir_relatorio(info_usuario)
