@@ -1,2 +1,0 @@
-2,arthur,empresa
-3,souza,casa
