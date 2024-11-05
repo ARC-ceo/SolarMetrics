@@ -108,7 +108,7 @@ def calcular_lucro_e_porcentagem(dados_energia):
         except ValueError:
             print("Por favor, digite um número válido.")
     lucro = round(valor_kwh * energia_gerada, 2)
-    print(f"Lucro gerado: R$ {lucro:.2f}")
+    print(f"Economia gerada: R$ {lucro:.2f}")
     if energia_gerada == 0:
         porcentagem = 0 
     else:
