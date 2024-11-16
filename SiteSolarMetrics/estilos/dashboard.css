@@ -1,0 +1,437 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;      /* Garante que o conteúdo ocupe toda a altura da tela */
+    background-color: #121212;
+    color: #fff;
+    overflow-x: hidden;     /* Evita barras de rolagem desnecessárias */
+}
+
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima do conteúdo */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Menu Lateral */
+.sidebar {
+    width: 250px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    left: 0; /* Mantém na posição inicial */
+    top: 0;
+    transform: translateX(0); /* Visível inicialmente */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
+    z-index: 100; /* Garante que esteja acima do conteúdo */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Move para fora da tela */
+}
+
+.sidebar h2 {
+    margin-top:40px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Cabeçalho do Menu */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Botões do Menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item.ativo {
+    background-color: #e1e417;
+    color: #111;
+}
+
+/* Estilo para o rodapé da sidebar */
+.sidebar-footer {
+    position: absolute;
+    bottom: 20px; /* Espaçamento inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta para manter centralizado */
+    text-align: center;
+    width: 100%; /* Ocupa toda a largura para melhor responsividade */
+}
+
+.sidebar-footer img {
+    max-width: 200px; /* Largura máxima da logo */
+    height: auto;
+    opacity: 0.8; /* Suaviza a logo visualmente */
+    transition: opacity 0.3s ease; /* Adiciona efeito ao hover */
+}
+
+.sidebar-footer img:hover {
+    opacity: 1; /* Opacidade total ao passar o mouse */
+}
+
+/* Botão de abrir/fechar menu */
+.toggle-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Ajusta com base na largura do menu */
+    z-index: 200; /* Fica acima do menu */
+    background-color: transparent;
+    color: #e1e417;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-menu.active {
+    background-color: #e1e417;
+    color: #111;
+}
+
+.sidebar.hidden + .toggle-menu {
+    left: 20px; /* Garante que o botão fique sempre visível ao lado esquerdo */
+}
+
+/* Espaço do Usuário */
+.user-info {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-details {
+    flex-grow: 1;
+    color: #fff;
+}
+
+.user-details h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.user-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.logout-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.logout-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Cartões Superiores */
+.dashboard-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.card img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+/* Botões de Consumo */
+.toggle-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background-color: #e1e417;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #c7c700;
+    color: #fff;
+}
+
+/* Gráficos */
+.dashboard-charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.chart {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.chart img {
+    max-width: 100%;
+    height: auto;
+}
+
+.chart h3 {
+    position: absolute;
+    background-color: #e1e417;
+    border: 1px yellow;
+    border-radius: 10px;
+    padding: 40px 15px 30px 15px;
+    line-height: 30px;
+    left: 30px;
+    width: 80px;
+    font-size: 1.2rem;
+    color:black;
+}
+
+/* Gráfico 80 */
+.chart-80 {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.chart-80 h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.chart-80 img{
+    max-width: 40%;
+}
+
+/* Geração */
+.dashboard-generation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.generation-card {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.generation-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.generation-card p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Estilo do container dos switches */
+.switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Garante que texto e switch fiquem nos extremos */
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #333; /* Opcional para separar as linhas */
+}
+
+/* Texto à esquerda */
+.switch-container p {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+    flex-grow: 1; /* Ocupa o espaço à esquerda */
+    text-align: left;
+}
+
+/* Estilo do switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0; /* Garante que o switch mantenha seu tamanho */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo do slider (parte visível do botão) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Estilo quando o switch está ativado */
+input:checked + .slider {
+    background-color: #e1e417;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* Movimenta a "bolinha" para a direita */
+}
+
+.chart-container {
+    max-width: 600px; /* Largura máxima do gráfico */
+    height: 350px; /* Altura máxima */
+    margin: 0 auto; /* Centraliza o gráfico horizontalmente */
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 80%;
+    position: relative; /* Garante que o canvas respeite os limites */
+}
+
+/* Contêiner principal dos gráficos */
+.info-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin: 20px auto;
+    max-width: 600px; /* Define largura máxima */
+    height: 350px; /* Define altura fixa */
+    position: relative;
+}
+
+#realTimeChart {
+    margin-top: 20px; /* Adiciona margem superior específica */
+}
+
+/* Configurações específicas do canvas */
+canvas {
+    width: 100% !important; /* Garante que o canvas ocupe toda a largura do contêiner */
+    height: 100% !important; /* Garante que o canvas ocupe toda a altura */
+}
+
+.gauge-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#gaugeChart {
+    transform: rotate(0deg); /* Exibe um círculo completo */
+    height: 100%; /* Ajusta altura para o contêiner */
+    width: 100%; /* Ajusta largura para o contêiner */
+}
+
+.gauge-text {
+    position: absolute;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.gauge-label {
+    font-size: 1rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.chart-label {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}

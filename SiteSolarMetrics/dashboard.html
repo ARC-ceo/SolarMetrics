@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SolarMetrics</title>
+    <link rel="stylesheet" href="estilos/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Botão de abrir/fechar menu -->
+    <button class="toggle-menu" id="toggleMenu">☰</button>
+
+    <!-- Menu Lateral -->
+    <aside class="sidebar" id="sidebar">
+        <!-- Espaço do Usuário -->
+        <div class="user-info">
+            <img src="imagens/rafael.png" alt="Avatar do Usuário" class="user-avatar">
+            <div class="user-details">
+                <h3>Rafael Nonato</h3>
+                <p>Residencial</p>
+            </div>
+            <a href="index.html">
+                <button class="logout-btn">
+                    <img src="imagens/logout.png" alt="Logout">
+                </button>
+            </a>
+        </div>
+
+        <!-- Botões do Menu -->
+        <nav class="menu">
+            <a href="#" class="menu-item ativo" id="overview">Overview</a>
+            <a href="#" class="menu-item" id="notifications">Notificações</a>
+            <a href="#" class="menu-item" id="settings">Configurações</a>
+            <a href="#" class="menu-item" id="help">Ajuda</a>
+        </nav>
+
+        <!-- Logo na parte inferior -->
+        <div class="sidebar-footer">
+            <img src="imagens/logo_SolarMetricsBranca.png" alt="SolarMetrics Logo" class="footer-logo">
+        </div>
+    </aside>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Conteúdo Principal -->
+        <main class="dashboard-main" id="mainContent">
+            <!-- Cartões Superiores -->
+            <section class="dashboard-top">
+                <div class="card">
+                    <h3>Instalação</h3>
+                    <div class="switch-container">
+                        <p>Medir Consumo</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="switch-container">
+                        <p>Medir Geração</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="switch-container">
+                        <p>Desligar Sistema</p>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="imagens/cloud-icon.png" alt="Clima">
+                    <h3>São Paulo</h3>
+                    <p>17°C</p>
+                </div>
+                <div class="card">
+                    <img src="imagens/savings-icon.png" alt="Economia">
+                    <h3>Economia no mês</h3>
+                    <p>R$ 45,00</p>
+                </div>
+            </section>
+
+            <!-- Gráficos -->
+            <section class="dashboard-charts">
+                <!-- Gráfico de Medição em Tempo Real -->
+                <div class="info-card">
+                    <canvas id="realTimeChart"></canvas>
+                    <p class="chart-label">Medição em Tempo Real</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="gauge-container">
+                        <canvas id="gaugeChart"></canvas>
+                        <div id="gaugePercentage" class="gauge-text">0%</div>
+                    </div>
+                    <p class="chart-label">Aproveitamento do Sistema</p>
+                </div>
+            </section>
+
+            <!-- Geração -->
+            <section class="dashboard-generation">
+                <div class="generation-card">
+                    <h4>Geração do Dia</h4>
+                    <p>45,20 KW/h</p>
+                </div>
+                <div class="generation-card">
+                    <h4>Geração da Semana</h4>
+                    <p>87,40 KW/h</p>
+                </div>
+                <div class="generation-card">
+                    <h4>Geração do Mês</h4>
+                    <p>87,40 KW/h</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+
+</html>

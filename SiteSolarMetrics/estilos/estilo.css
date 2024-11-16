@@ -1,0 +1,554 @@
+/* Efeito de transição para todos os elementos */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: white;
+    background-image: url('imagens/banner.png');
+    background-color: #000;
+}
+
+/* Header */
+.header {
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    z-index: 10;
+    margin-top: 15px;
+    width: 98%;
+    display: flex;
+    flex-flow: column;
+    gap: 5px;
+    border-radius: 8px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(40, 43, 0, 0.5);
+    /* Fundo preto com 50% de transparência */
+    color: white;
+    /* Texto opaco */
+    padding: 10px 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+.header-bottom {
+    background-color: rgba(255, 251, 0, 0.116);
+    /* Fundo preto com 50% de transparência */
+    color: white;
+    /* Texto opaco */
+    padding: 10px;
+    text-align: right;
+    border-radius: 0 0 8px 8px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav {
+    display: inline-flex;
+    gap: 25px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botão de login com efeito de transparência */
+.login-button {
+    background-color: #e1e417;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.login-button:hover {
+    opacity: 0.8;
+    /* Torna o botão semi-transparente ao passar o mouse */
+}
+
+/* Banner com imagem de fundo */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Cobre toda a altura da viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Fica atrás do conteúdo */
+}
+
+.banner h1 {
+    font-size: 2.5em;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Título sobre o banner */
+.banner-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.banner-title span {
+    color: #fbff00;
+    /* Cor de destaque para "SolarMetrics" */
+}
+
+/* FAQ Section */
+.faq {
+    padding: 20px 50px;
+    background-color: #1e1e1e;
+    margin: 20px 50px;
+    border-radius: 8px;
+}
+
+.faq-item {
+    background-color: #333;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transição suave para cor e sombra */
+}
+
+
+
+.faq-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.4em;
+    color: white;
+}
+
+.faq-title img {
+    width: 30px;
+}
+
+/* Transição suave para a cor de fundo da pergunta */
+.faq-item {
+    background-color: #333;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    /* Transição suave de cor */
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Seção de Integrantes */
+.integrantes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 8px;
+    border: 2px solid #9F9B9B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    padding: 20px;
+    gap: 20px;
+    margin-left: 30px;
+}
+
+.foto-integrante {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.info h2 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.info p {
+    color: white;
+}
+
+.links a {
+    text-decoration: none;
+    color: #0073b1;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.links a:hover {
+    color: #005582;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #2e2e2e;
+    border-radius: 8px;
+    margin: 10px 50px 20px 50px;
+}
+
+.footer img {
+    width: 80px;
+}
+
+.footer p {
+    font-size: 0.7em;
+    margin-top: 10px;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Efeito de hover nos ícones das redes sociais */
+.social-icons img {
+    width: 25px;
+    transition: transform 0.3s ease;
+    /* Transição suave no hover */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    /* Aumenta levemente o ícone ao passar o mouse */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Centralizar o formulário */
+.loginpage {
+    position: absolute;
+    margin-top: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+/* Caixa de botões de troca de aba */
+.caixabotoeslogin {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+/* Botões de aba (Login/Cadastro) */
+.botaologin {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.botaologin.ativo {
+    background-color: yellow;
+    color: black;
+}
+
+.caixalogin {
+    border: 3px solid #e1e417;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* Estilo dos formulários */
+.formulario {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.formulario.ativo {
+    display: block;
+    opacity: 1;
+}
+
+.formulario h2 {
+    text-align: center;
+}
+
+.formulario h2 span {
+    color: yellow;
+}
+
+.credenciais h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.credenciais h2 span {
+    color: #e1e417;
+}
+
+.titulocaixalogin {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 92%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid yellow;
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    position: relative;
+    padding-left: 30px;
+    /* Espaço para a checkbox customizada */
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+}
+
+/* Estilo da caixa da checkbox */
+input[type="checkbox"]+label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid yellow;
+    /* Borda amarela */
+    background-color: transparent;
+    /* Fundo transparente */
+    border-radius: 3px;
+    /* Arredonda as bordas levemente */
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo da caixa quando a checkbox está marcada */
+input[type="checkbox"]:checked+label:before {
+    background-color: yellow;
+    /* Cor de fundo amarela quando marcada */
+    border-color: yellow;
+    /* Mantém a borda amarela */
+}
+
+/* ícone de verificação */
+input[type="checkbox"]:checked+label:after {
+    content: "✔";
+    /* Ícone de verificação */
+    position: absolute;
+    left: 4px;
+    top: 0;
+    font-size: 16px;
+    color: #333;
+    /* Cor do ícone */
+}
+
+button[type="button"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: yellow;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: yellow;
+    color: black;
+}
+
+/* Seção Sobre */
+
+.bannersobre {
+    position: relative;
+    width: 100%;
+    height: 180vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bannersobre h2 {
+    margin-top: 300px;
+    font-size: 2.5em;
+    color: white;
+    padding: 0px;
+    border-radius: 8px;
+    text-align: center;
+        
+}
+
+.bannersobre h2 span {
+    color: #e1e417;
+}
+
+.paginasobre {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.paginasobre h2 {
+    font-size: 2.5rem;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+    margin-bottom: 20px;
+}
+
+.paginasobre h2 span {
+    color: #e1e417;
+    /* Cor amarela destacada */
+}
+
+/* Seção principal de serviços */
+.paginasobremain {
+    margin-top: 30px;
+}
+
+.paginasobremain h3 {
+    font-size: 2rem;
+    color: #fbff00;
+    margin-bottom: 40px;
+}
+
+/* Caixas de serviços */
+.caixagrande {
+    display: flex;
+    align-items: center;
+    border: 1px solid yellow;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixagrande:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.caixagrande img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+
+.caixamenor {
+    padding: 20px;
+    text-align: left;
+    border-left: 1px solid yellow;
+}
+
+.caixamenor h4 {
+    font-size: 1.5rem;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+    margin-bottom: 10px;
+}
+
+.caixamenor p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
