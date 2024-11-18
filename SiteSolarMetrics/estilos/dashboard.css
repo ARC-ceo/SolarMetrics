@@ -86,7 +86,7 @@ body {
 .sidebar-footer img {
     max-width: 200px; /* Largura máxima da logo */
     height: auto;
-    opacity: 0.8; /* Suaviza a logo visualmente */
+    opacity: 45%; /* Suaviza a logo visualmente */
     transition: opacity 0.3s ease; /* Adiciona efeito ao hover */
 }
 

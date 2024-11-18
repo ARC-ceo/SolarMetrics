@@ -18,11 +18,11 @@ const realTimeCtx = document.getElementById("realTimeChart").getContext("2d");
 const realTimeChart = new Chart(realTimeCtx, {
     type: "line",
     data: {
-        labels: ["9:00", "9:15", "9:30", "9:45", "10:00"],
+        labels: [],
         datasets: [
             {
                 label: "Consumo (W)",
-                data: [10, 20, 15, 25, 30],
+                data: [],
                 borderColor: "orange",               
                 fill: true,
                 tension: 0.4,
@@ -30,7 +30,7 @@ const realTimeChart = new Chart(realTimeCtx, {
             },
             {
                 label: "Geração (W)",
-                data: [5, 15, 10, 20, 25],
+                data: [],
                 borderColor: "yellow",
                 fill: true,
                 tension: 0.4,
@@ -44,24 +44,44 @@ const realTimeChart = new Chart(realTimeCtx, {
         plugins: {
             legend: {
                 labels: {
-                    color: "#fff",
+                    color: 'rgba(255, 255, 255, 0.4)',
+
                 },
+                
+                
             },
         },
         scales: {
             x: {
+                grid: {
+                    display: false, // Desativa a grade do eixo x
+                },
                 ticks: {
-                    color: "#fff",
+                    color: 'rgba(255, 255, 255, 0.4)', // Opacidade de 50% para as labels do eixo X
                 },
             },
             y: {
-                ticks: {
-                    color: "#fff",
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.4)',
+                    lineWidth: 1,  // Espessura das linhas da grade do eixo y
                 },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.4)',
+                },
+            },
+        },
+        backgroundColor: 'rgba(0, 0, 0, 0)', // Define o fundo do gráfico como transparente
+        layout: {
+            padding: {
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
             },
         },
     },
 });
+
 
 // Atualiza o gráfico de Medição em Tempo Real a cada 5 segundos
 setInterval(() => {
@@ -82,14 +102,14 @@ setInterval(() => {
         .catch(error => console.error('Erro ao obter pressão:', error));
 
 // Adiciona novos dados ao gráfico
-realTimeChart.data.labels.push(new Date().toLocaleTimeString());
+realTimeChart.data.labels.push(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
 realTimeChart.data.datasets[0].data.push(currentConsumption);
 realTimeChart.data.datasets[1].data.push(currentGeneration);
 
 // Sobrescreve o primeiro valor quando o gráfico ultrapassa 10 pontos
-if (realTimeChart.data.labels.length > 10) {
+if (realTimeChart.data.labels.length > 5) {
     // Substitui o primeiro valor (índice 0) pelos novos dados
-    realTimeChart.data.labels[0] = new Date().toLocaleTimeString();
+    realTimeChart.data.labels[0] = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     realTimeChart.data.datasets[0].data[0] = currentConsumption;
     realTimeChart.data.datasets[1].data[0] = currentGeneration;
     
@@ -102,9 +122,9 @@ if (realTimeChart.data.labels.length > 10) {
 }
 
 // Atualiza o gráfico após a modificação
-realTimeChart.update();
-
-    realTimeChart.update();
+realTimeChart.update({
+    duration: 0 // Desativa a animação
+});
 
     // Atualiza o gráfico de Aproveitamento do Sistema
     updateGaugeChart(currentGeneration, currentConsumption);
