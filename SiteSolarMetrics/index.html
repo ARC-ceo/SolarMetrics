@@ -1,127 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - SolarMetrics</title>
-    <link rel="stylesheet" href="estilos/dashboard.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>SolarMetrics - Home</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
 </head>
-
 <body>
-    <!-- Botão de abrir/fechar menu -->
-    <button class="toggle-menu" id="toggleMenu">☰</button>
-
-    <!-- Menu Lateral -->
-    <aside class="sidebar" id="sidebar">
-        <!-- Espaço do Usuário -->
-        <div class="user-info">
-            <img src="imagens/rafael.png" alt="Avatar do Usuário" class="user-avatar">
-            <div class="user-details">
-                <h3>Rafael Nonato</h3>
-                <p>Residencial</p>
+    <!-- Header fixo no topo da página -->
+    <header class="header">
+        <div class="header-top">
+            <div class="logo">
+                <a href="index.html" target="_blank"><img src="imagens/logo_SolarMetricsBranca.png" alt="Logo SolarMetrics" title="Botão Voltar para Home"></a>
             </div>
-            <a href="index.html">
-                <button class="logout-btn">
-                    <img src="imagens/logout.png" alt="Logout">
-                </button>
-            </a>
+            <a href="paginalogin.html"><button class="login-button">Fazer login</button></a>
+        </div>
+        <div class="header-bottom">
+            <nav class="nav">
+                <a href="sobre.html">Sobre</a>
+                <a href="desenvolvedores.html">Desenvolvedores</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner com imagem de fundo -->
+    <section class="banner">
+        <img src="imagens/banner.png" alt="Banner do SolarMetrics" class="banner-image">
+        <h1 class="banner-title">Junte-se a <span>SolarMetrics</span>, e venha monitorar seu sistema solar.</h1>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="faq-title">
+            <img src="imagens/iconefaq.png" alt="Ícone FAQ" title="Ícone FAQ">
+            <h2>Perguntas <span>Frequentes</span></h2>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(0)">
+                Como funciona o SolarMetrics?
+                <span class="toggle-symbol">+</span>
+            </div>
+            <div class="faq-answer" id="answer-0">
+                O Solar Metrics permite que você monitore sua instalação de energia solar em tempo real. Por meio de sensores instalados no sistema, os dados de produção de energia, consumo e eficiência são enviados para o nosso dashboard, onde você pode acompanhar todos os detalhes do desempenho da sua instalação.
+            </div>
         </div>
 
-        <!-- Botões do Menu -->
-        <nav class="menu">
-            <a href="#" class="menu-item ativo" id="overview">Overview</a>
-            <a href="#" class="menu-item" id="notifications">Notificações</a>
-            <a href="#" class="menu-item" id="settings">Configurações</a>
-            <a href="#" class="menu-item" id="help">Ajuda</a>
-        </nav>
-
-        <!-- Logo na parte inferior -->
-        <div class="sidebar-footer">
-            <img src="imagens/logo_SolarMetricsBranca.png" alt="SolarMetrics Logo" class="footer-logo">
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">
+                É possível ver quanto estou economizando com energia solar?
+                <span class="toggle-symbol">+</span>
+            </div>
+            <div class="faq-answer" id="answer-1">
+                <!-- Resposta oculta até ser clicada -->
+            </div>
         </div>
-    </aside>
 
-    <!-- Dashboard Container -->
-    <div class="dashboard-container">
-        <!-- Conteúdo Principal -->
-        <main class="dashboard-main" id="mainContent">
-            <!-- Cartões Superiores -->
-            <section class="dashboard-top">
-                <div class="card">
-                    <h3>Instalação</h3>
-                    <div class="switch-container">
-                        <p>Medir Consumo</p>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="switch-container">
-                        <p>Medir Geração</p>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                    <div class="switch-container">
-                        <p>Desligar Sistema</p>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="imagens/cloud-icon.png" alt="Clima">
-                    <h3>São Paulo</h3>
-                    <p>17°C</p>
-                </div>
-                <div class="card">
-                    <img src="imagens/savings-icon.png" alt="Economia">
-                    <h3>Economia no mês</h3>
-                    <p>R$ 45,00</p>
-                </div>
-            </section>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">
+                Posso acessar o SolarMetrics em dispositivos móveis?
+                <span class="toggle-symbol">+</span>
+            </div>
+            <div class="faq-answer" id="answer-2">
+                <!-- Resposta oculta até ser clicada -->
+            </div>
+        </div>
+    </section>
 
-            <!-- Gráficos -->
-            <section class="dashboard-charts">
-                <!-- Gráfico de Medição em Tempo Real -->
-                <div class="info-card">
-                    <canvas id="realTimeChart"></canvas>
-                    <p class="chart-label">Medição em Tempo Real</p>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="imagens/logo_texto_amarelo.png" alt="Logo ARC" title="Logo ARC">
+        <p>© Todos os direitos reservados - Grupo ARC</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><img src="imagens/iconein.png" alt="LinkedIn" title="Página LinkedIn"></a>
+            <a href="https://github.com" target="_blank"><img src="imagens/iconegithub.png" alt="GitHub" title="Página GitHub"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="imagens/iconeig.png" alt="Instagram" title="Página Instagram"></a>
+        </div>
+    </footer>
 
-                <!-- Gráfico de Aproveitamento do Sistema -->
-                <div class="info-card gauge-card">
-                    <div class="gauge-container">
-                        <canvas id="gaugeChart"></canvas>
-                        <div id="gaugePercentage" class="gauge-text">50%</div>
-                    </div>
-                    <p class="chart-label">Aproveitamento do Sistema</p>
-                </div>
-            </section>
-
-            <!-- Geração -->
-            <section class="dashboard-generation">
-                <div class="generation-card">
-                    <h4>Geração do Dia</h4>
-                    <p>45,20 KW/h</p>
-                </div>
-                <div class="generation-card">
-                    <h4>Geração da Semana</h4>
-                    <p>87,40 KW/h</p>
-                </div>
-                <div class="generation-card">
-                    <h4>Geração do Mês</h4>
-                    <p>87,40 KW/h</p>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <script src="scripts/dashboard.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
-
 </html>
