@@ -1,14 +1,22 @@
 function toggleAnswer(index) {
     const answer = document.getElementById(`answer-${index}`);
     const questionBox = document.querySelectorAll('.faq-item')[index]; 
+    const toggleSymbol = questionBox.querySelector('.toggle-symbol');
 
     if (answer.style.display === 'block') {
         answer.style.display = 'none';
-        questionBox.style.backgroundColor = '#aaaaaa';
+        questionBox.style.backgroundColor = '#404040';
         questionBox.style.boxShadow = 'none';
+        questionBox.style.border = '3px solid #000';
+        toggleSymbol.textContent = '+';
+        questionBox.style.color = '#FFFFFF';
     } else {
         answer.style.display = 'block';
-        questionBox.style.backgroundColor = '#fbff00da'; 
+        questionBox.style.backgroundColor = '#fbff00da';
+        questionBox.style.border = 'none'; 
+        toggleSymbol.textContent = '-';
+        questionBox.style.color = '#000';
+        answer.style.cursor = 'pointer';
     }
 }
 

@@ -63,6 +63,9 @@
                 <h4>Economize e Lucre com Energia Solar</h4>
                 <p>Veja o lucro gerado pela sua instalação solar e acompanhe quanto você economiza mensalmente.</p>
             </div>
+            <div class="caixa-saiba-mais">
+                <button class="saiba-mais">SAIBA MAIS</button>
+            </div>
         </div>
     </section>
     
@@ -71,35 +74,32 @@
     <section class="faq">
         <div class="faq-title">
             <img src="imagens/iconefaq.png" alt="Ícone FAQ" title="Ícone FAQ">
-            <h2>Perguntas <span>Frequentes</span></h2>
+            <h2>Perguntas <span class="span-perguntas">Frequentes</span></h2>
         </div>
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(0)">
+        <div class="faq-item" onclick="toggleAnswer(0)">
+            <div class="faq-question" style="font-weight: bold;">
                 Como funciona o SolarMetrics?
                 <span class="toggle-symbol">+</span>
             </div>
             <div class="faq-answer" id="answer-0">
-                O Solar Metrics permite que você monitore sua instalação de energia solar em tempo real. Por meio de
-                sensores instalados no sistema, os dados de produção de energia, consumo e eficiência são enviados para
-                o nosso dashboard, onde você pode acompanhar todos os detalhes do desempenho da sua instalação.
+                O Solar Metrics permite que você monitore sua instalação de energia solar em tempo real. Por meio de sensores instalados no sistema, os dados de produção de energia, consumo e eficiência são enviados para o nosso dashboard, onde você pode acompanhar todos os detalhes do desempenho da sua instalação.
             </div>
         </div>
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(1)">
+        <div class="faq-item" onclick="toggleAnswer(1)">
+            <div class="faq-question" style="font-weight: bold;">
                 É possível ver quanto estou economizando com energia solar?
                 <span class="toggle-symbol">+</span>
             </div>
             <div class="faq-answer" id="answer-1">
-                Infelizmente, ainda não temos um aplicativo dedicado para dispositivos móveis. No entanto, você pode
-                consultar suas informações e receber atualizações diretamente pelo WhatsApp por meio do nosso assistente
-                virtual.
+                Infelizmente, ainda não temos um aplicativo dedicado para dispositivos móveis. No entanto, você pode consultar suas informações e receber atualizações diretamente pelo WhatsApp por meio do nosso assistente virtual.
             </div>
         </div>
+        
 
-        <div class="faq-item">
-            <div class="faq-question" onclick="toggleAnswer(2)">
+        <div class="faq-item" onclick="toggleAnswer(2)">
+            <div class="faq-question" style="font-weight: bold;">
                 Posso acessar o SolarMetrics em dispositivos móveis?
                 <span class="toggle-symbol">+</span>
             </div>
@@ -107,6 +107,26 @@
                 Sim! O Solar Metrics calcula automaticamente o valor estimado economizado com base na produção de
                 energia e na tarifa local de eletricidade, permitindo que você visualize quanto está economizando ao
                 utilizar energia solar.
+            </div>
+        </div>
+
+        <div class="faq-item"onclick="toggleAnswer(3)">
+            <div class="faq-question"  style="font-weight: bold;">
+                Como posso verificar o histórico de produção de energia?
+                <span class="toggle-symbol">+</span>
+            </div>
+            <div class="faq-answer" id="answer-3">
+                Você pode acessar o histórico de produção de energia diretamente no dashboard do SolarMetrics. Lá, os dados coletados pelos sensores IoT são armazenados e exibidos em gráficos interativos. Esses gráficos permitem que você visualize a produção de energia por dia, semana e mês.
+            </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(4)">
+            <div class="faq-question" style="font-weight: bold;">
+                A instalação dos sensores é demorada?
+                <span class="toggle-symbol">+</span>
+            </div>
+            <div class="faq-answer" id="answer-4">
+                Não, a instalação dos sensores é rápida e geralmente leva de 1 a 2 horas. Nossa equipe técnica chega até sua residência ou empresa, realiza a instalação dos sensores IoT no seu sistema solar e os conecta à rede. Após a instalação, os sensores começam a enviar dados para o dashboard, permitindo que você monitore a produção de energia em tempo real.
             </div>
         </div>
     </section>

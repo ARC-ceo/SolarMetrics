@@ -200,61 +200,67 @@ body {
 
 /* FAQ Section */
 .faq {
-    padding: 20px 50px;
+    padding: 30px 130px;
     background-color: #1e1e1e;
-    border-radius: 8px;
 }
-
-.faq-item {
-    background-color: #333;
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    /* Transição suave para cor e sombra */
-}
-
-
 
 .faq-title {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
-    font-size: 1.4em;
+    justify-content: left;
+    gap: 29px;
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.7rem;
     color: white;
+    margin-top: 20px;   
+    margin-bottom: 20px;
+}
+
+.span-perguntas{
+    color: #e1e417;
+}
+
+.toggle-symbol {
+    font-size: 30px; 
 }
 
 .faq-title img {
-    width: 30px;
+    width: 80px;
 }
 
 /* Transição suave para a cor de fundo da pergunta */
 .faq-item {
-    background-color: #aaaaaa;
+    background-color: #404040;
     margin: 15px 0;
     padding: 15px;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 12px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
-    /* Transição suave de cor */
+    border: 3px solid #000;
 }
 
 .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    color: black;
-
+    padding-left: 12px; /* Espaçamento interno à esquerda */
+    padding-right: 12px; /* Espaçamento interno à direita */
+    padding-top: 10px; /* Espaçamento interno no topo */
+    padding-bottom: 10px; /* Espaçamento interno na parte inferior */
+    height: fit-content; /* Altura ajustada ao conteúdo */
+    border-radius: 12px; /* Bordas arredondadas */
+    display: flex; /* Define layout flexível */
+    align-items: center; /* Alinha itens verticalmente */
+    justify-content: space-between; /* Distribui itens com espaço entre eles */
+    gap: 20px; /* Espaçamento entre os itens */
+    cursor: pointer; /* Mostra cursor de ponteiro */
+    z-index: 30;
 }
 
 .faq-answer {
     display: none;
     margin-top: 10px;
     color: black;
+    line-height: 1.5;
 }
 
 /* Seção de Integrantes */
@@ -649,20 +655,52 @@ button[type="submit"]:hover {
 .servicos {
     background-color: #121212;
     padding: 40px 20px;
-    text-align: center;
+    text-align: left;
 }
+
+.saiba-mais {
+    background-color: #f4f60e; /* Cor de fundo amarelo neon */
+    color: #000; /* Texto preto */
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #f4f60e;
+    border-radius: 25px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para o botão */
+    transition: all 0.3s ease;
+  }
+
+  .saiba-mais:hover {
+    background-color: transparent;
+    border-color: #b5ba09; /* Altera a cor da borda ao clicar */
+    color: #f4f60e;
+    transform: scale(0.95);
+}
+  
+  .caixa-saiba-mais {
+    display: flex;
+    justify-content: center;     /* Centraliza o botão horizontalmente */
+    align-items: flex-end;       /* Alinha o botão na parte inferior do contêiner */
+    width: 100%;                 /* Garante que o botão ocupe a largura total */
+    margin-top: 30px;  
+  }
 
 .servicos-header h2 {
     color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.0rem;
+    margin-bottom: 5px;
 }
 
 .underline {
-    width: 50px;
-    height: 4px;
+    width: 90px;
+    height: 2px;
     background-color: #D7FF4C;
-    margin: 0 auto 20px auto;
+    margin: auto 40px 40px;
 }
 
 .container-servicos {
@@ -673,6 +711,11 @@ button[type="submit"]:hover {
 }
 
 .caixa-servicos {
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.5;
     background-color: #424141;
     color: white;
     flex: 1;
@@ -681,11 +724,13 @@ button[type="submit"]:hover {
     padding: 20px;
     text-align: left;
     transition: transform 0.3s ease-in-out;
+    
 }
 
 .caixa-servicos:hover {
     transform: scale(1.05);
 }
+
 
 .caixa-servicos img {
     width: 100%;
