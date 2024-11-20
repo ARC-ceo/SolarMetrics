@@ -4,7 +4,7 @@ function toggleAnswer(index) {
 
     if (answer.style.display === 'block') {
         answer.style.display = 'none';
-        questionBox.style.backgroundColor = '#333';
+        questionBox.style.backgroundColor = '#aaaaaa';
         questionBox.style.boxShadow = 'none';
     } else {
         answer.style.display = 'block';
