@@ -8,8 +8,7 @@ function toggleAnswer(index) {
         questionBox.style.boxShadow = 'none';
     } else {
         answer.style.display = 'block';
-        questionBox.style.backgroundColor = '#7a7909bd'; 
-        questionBox.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.3)';
+        questionBox.style.backgroundColor = '#fbff00da'; 
     }
 }
 
