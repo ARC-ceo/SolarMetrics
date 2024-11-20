@@ -3,17 +3,6 @@ let currentConsumption = 0; // Consumo atual
 let currentGeneration = 0; // Geração atual
 
 document.addEventListener("DOMContentLoaded", () => {
-    const toggleMenuButton = document.getElementById("toggleMenu");
-    const sidebar = document.getElementById("sidebar");
-    const mainContent = document.getElementById("mainContent");
-
-    toggleMenuButton.addEventListener("click", () => {
-        sidebar.classList.toggle("hidden");
-        mainContent.classList.toggle("expanded");
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
     const settingsButton = document.getElementById("settings");
     const overviewSection = document.getElementById("mainContent");
     const settingsSection = document.getElementById("settingsSection");

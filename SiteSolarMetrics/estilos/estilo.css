@@ -10,16 +10,16 @@ body {
     color: white;
     background-image: url('imagens/banner.png');
     background-color: #000;
+    overflow-x: hidden; /* Previne barra horizontal */
 }
 
 /* Header */
 .header {
     position: absolute;
     top: 0;
-    padding: 20px;
+    margin: 10px;
     z-index: 10;
-    margin-top: 15px;
-    width: 98%;
+    width: 99%;
     display: flex;
     flex-flow: column;
     gap: 0px;
@@ -544,13 +544,19 @@ button[type="submit"]:hover {
 /* Seção Sobre */
 
 .bannersobre {
-    position: relative;
-    width: 100%;
-    height: 180vh;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+    text-align: center;
 }
+
+.bannersobre img{
+    height: 2000px;
+}
+
 
 .bannersobre h2 {
     margin-top: 300px;
@@ -749,4 +755,177 @@ button[type="submit"]:hover {
     font-size: 1rem;
     line-height: 1.6;
     color: #e0e0e0;
+}
+
+/* Responsividade */
+
+@media (max-width: 1920px) {
+    .bannersobre h2 {
+        font-size: 2.5rem;
+    }
+
+    .caixagrande {
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .caixamenor p {
+        font-size: 1.1rem;
+    }
+
+    .header-top {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1076px) {
+    .banner h1 {
+        font-size: 1.8em;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 785px) {
+    .banner h1 {
+        font-size: 1.6em;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .body{
+        overflow: hidden;
+    }
+    
+    .header {
+        flex-direction: column;
+    }
+
+    .banner h1 {
+        font-size: 1.3em;
+        color: white;
+        padding: 20px;
+    }
+
+    .nav {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .container-servicos {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .caixa-servicos {
+        flex: 1 1 100%; /* Uma coluna */
+    }
+
+
+    .bannersobre h2 {
+        font-size: 2rem;
+    }
+
+    .caixagrande {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .caixagrande img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .caixamenor {
+        text-align: center;
+    }
+
+    .caixamenor h4 {
+        font-size: 1.3rem;
+    }
+
+    .caixamenor p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 662) {
+    .banner h1 {
+        font-size: 1.2em;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner h1 {
+        font-size: 1.2em;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    
+    .body{
+        overflow: hidden;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+
+    .container-servicos {
+        flex-direction: column;
+    }
+
+    .caixa-servicos {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .bannersobre img {
+        max-height: 250px;
+    }
+
+    .bannersobre h2 {
+        font-size: 1.5rem;
+    }
+
+    .caixagrande {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .caixagrande img {
+        max-width: 100%;
+    }
+
+    .caixamenor h4 {
+        font-size: 1.2rem;
+    }
+
+    .caixamenor p {
+        font-size: 0.9rem;
+    }
 }
