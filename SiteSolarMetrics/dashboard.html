@@ -45,7 +45,6 @@
 
     <!-- Dashboard Container -->
     <div class="dashboard-container">
-        <!-- Conteúdo Principal -->
         <main class="dashboard-main" id="mainContent">
             <!-- Cartões Superiores -->
             <section class="dashboard-top">
@@ -87,12 +86,10 @@
 
             <!-- Gráficos -->
             <section class="dashboard-charts">
-                <!-- Gráfico de Medição em Tempo Real -->
                 <div class="info-card">
                     <canvas id="realTimeChart"></canvas>
                     <p class="chart-label">Medição em Tempo Real</p>
                 </div>
-                
                 <div class="info-card">
                     <div class="gauge-container">
                         <canvas id="gaugeChart"></canvas>
@@ -118,8 +115,75 @@
                 </div>
             </section>
         </main>
-    </div>
 
+        <section class="dashboard-settings" id="settingsSection">
+            <div class="configButtons">
+                <h2>Menu de Configurações</h2>
+                <button class="return-button" id="returnToOverview">← Retornar ao Dashboard</button>
+            </div>
+            <div class="settings-card">
+                <!-- Formulário -->
+                <div class="settings-form">
+                    <form id="userProfileForm">
+                        <h3>Perfil do Usuário</h3>
+                            <label for="userName">Nome:</label>
+                            <input type="text" id="userName" name="userName" value="Rafael Nonato">
+
+                            <label for="userEmail">Email:</label>
+                            <input type="email" id="userEmail" name="userEmail" value="Rafael.Nonato@gmail.com">
+
+                            <div class="half-input">
+                                <label for="userPhone">Celular:</label>
+                                <input type="tel" id="userPhone" name="userPhone" value="11 94032-8732">
+                            </div>
+                            <div class="half-input">
+                                <label for="userLandline">Telefone Fixo:</label>
+                                <input type="tel" id="userLandline" name="userLandline" value="11 5021-8732">
+                            </div>
+                    </form>
+
+                    <form id="installationForm">
+                        <h3>Instalação</h3>
+                        <div class="formBox">
+                            <div class="half-input">
+                                <label for="installationType">Tipo de instalação:</label>
+                                <select id="installationType" name="installationType">
+                                    <option value="Residencial" selected>Residencial</option>
+                                    <option value="Comercial">Comercial</option>
+                                </select>
+                            </div>
+                            <div class="half-input">
+                                <label for="installationCEP">CEP da instalação:</label>
+                                <input type="text" id="installationCEP" name="installationCEP" value="01536-000">
+                            </div>
+                            <div class="half-input">
+                                <label for="panelsQuantity">Qtd painéis solares:</label>
+                                <input type="number" id="panelsQuantity" name="panelsQuantity" value="20">
+                            </div>
+                            <div class="half-input">
+                                <label for="panelPower">Potência dos painéis:</label>
+                                <input type="number" id="panelPower" name="panelPower" value="320">
+                            </div>
+                            <div class="full-input">
+                                <label for="installationAddress">Logradouro:</label>
+                                <input type="text" id="installationAddress" name="installationAddress"
+                                    value="Av. Lacerda Franco, 762">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Foto do perfil -->
+                <div class="profile-photo">
+                    <img src="imagens/rafael.png" alt="Foto de perfil">
+                    <div class="profile-photo-buttons">
+                        <button type="button" id="uploadPhotoButton">Enviar Foto</button>
+                        <button type="button" id="removePhotoButton">Remover Foto</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <script src="scripts/dashboard.js"></script>
 </body>
 

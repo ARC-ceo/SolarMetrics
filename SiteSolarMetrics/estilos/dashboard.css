@@ -169,11 +169,13 @@ body {
 }
 
 .card {
+    flex: 1;
     background-color: #1f1f1f;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
+    border-radius: 10px;
+    padding: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
 }
 
 .card h3 {
@@ -185,6 +187,12 @@ body {
 .card img {
     max-width: 60px;
     margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0;
+    color: #ccc;
 }
 
 /* Botões de Consumo */
@@ -375,16 +383,16 @@ input:checked + .slider:before {
     position: relative; /* Garante que o canvas respeite os limites */
 }
 
-/* Contêiner principal dos gráficos */
+
+
+/* Estilo para os gráficos */
 .info-card {
+    flex: 1;
     background-color: #1f1f1f;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    margin: 20px auto;
-    max-width: 600px; /* Define largura máxima */
-    height: 350px; /* Define altura fixa */
     position: relative;
 }
 
@@ -394,17 +402,16 @@ input:checked + .slider:before {
 
 /* Configurações específicas do canvas */
 canvas {
-    width: 100% !important; /* Garante que o canvas ocupe toda a largura do contêiner */
+    width: 100% !important; /* Garante que o canvas ocupe toda a largura */
     height: 100% !important; /* Garante que o canvas ocupe toda a altura */
 }
 
 .gauge-container {
     position: relative;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
 }
 
 #gaugeChart {
@@ -415,12 +422,10 @@ canvas {
 
 .gauge-text {
     position: absolute;
-    margin-bottom: 30px;
     font-size: 2rem;
-    font-weight: bold;
     color: #fff;
+    font-weight: bold;
 }
-
 .gauge-label {
     font-size: 1rem;
     color: #fff;
@@ -434,4 +439,326 @@ canvas {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
+}
+
+/* Dashboard Settings */
+.dashboard-settings {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Ajuste do layout principal */
+.settings-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Linhas abaixo de Usuário e Instalação */
+.settings-card h3 {
+    font-size: 1.5rem;
+    color: #e1e417;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+}
+
+/* Inputs e labels no formulário */
+.settings-form label {
+    display: block;
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+.settings-form input,
+.settings-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    background-color: #1f1f1f;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.settings-form input:focus,
+.settings-form select:focus {
+    outline: none;
+    border-color: #e1e417;
+    box-shadow: 0 0 5px #e1e417;
+}
+
+/* Estilo dos inputs e selects */
+.settings-card input[type="text"],
+.settings-card input[type="email"],
+.settings-card input[type="tel"],
+.settings-card input[type="number"],
+.settings-card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.settings-card input:focus,
+.settings-card select:focus {
+    outline: none;
+    border-color: #e1e417;
+    box-shadow: 0 0 5px #e1e417;
+}
+
+/* Botões Enviar e Remover Foto */
+.settings-card button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #111;
+    background-color: #e1e417;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-card button:hover {
+    background-color: #c7c700;
+    color: #fff;
+}
+
+/* Estilo do botão Retornar ao Dashboard */
+.return-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e1e417;
+    color: #111;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.return-button:hover {
+    background-color: #c7c700;
+    color: #fff;
+}
+
+/* Layout para inputs menores */
+.half-input {
+    width: 48%;
+    display: inline-block;
+    margin-right: 4%;
+}
+
+.half-input:last-child {
+    margin-right: 0;
+}
+
+/* Estilo do Logradouro */
+.full-input {
+    width: 100%;
+    display: block;
+}
+
+/* Oculta seções não ativas */
+.dashboard-main,
+.dashboard-settings {
+    display: none;
+}
+
+.dashboard-main.active,
+.dashboard-settings.active {
+    display: block;
+}
+
+/* Botão de remover foto */
+#removePhotoButton {
+    display: inline-block;
+    background-color: #e1e417;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#removePhotoButton:hover {
+    background-color: #c7c700;
+    color: #fff;
+}
+
+/* Foto do perfil */
+.profile-photo {
+    flex: 0 0 30%;
+    text-align: center;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Caixa para botões de foto */
+.profile-photo-buttons {
+    margin-top: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.profile-photo-buttons button {
+    display: block;
+    margin: 5px auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #111;
+    background-color: #e1e417;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-photo-buttons button:hover {
+    background-color: #c7c700;
+    color: #fff;
+}
+
+/* Estilo para Foto de Perfil */
+.profile-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 2;
+}
+
+.profile-photo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+}
+
+.profile-photo-container label {
+    cursor: pointer;
+    color: #e1e417;
+    font-size: 1rem;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.profile-photo label:hover {
+    text-decoration: underline;
+}
+
+/* Alinhamento dos campos lado a lado */
+.settings-form .half-input {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+}
+
+.settings-form .half-input:last-child {
+    margin-right: 0;
+}
+
+.settings-card form .full-input {
+    grid-column: span 2;
+}
+
+/* Campo de logradouro */
+.settings-form .full-input {
+    width: 100%;
+}
+
+/* Layout de instalação */
+#installationForm{
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.upBox{
+    justify-content: space-between;
+}
+
+.formBox{
+    display: grid;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#installationForm .half-input {
+    width: 100%;
+}
+
+#installationForm .full-input {
+    grid-column: span 2;
+}
+
+/* Botão de navegação ativa no menu */
+.menu-item {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item.ativo {
+    background-color: #e1e417;
+    color: #111;
+}
+
+.configButtons{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .dashboard-top,
+    .dashboard-charts,
+    .dashboard-generation {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .info-card,
+    .card,
+    .generation-card {
+        flex: none;
+        width: 100%;
+    }
 }

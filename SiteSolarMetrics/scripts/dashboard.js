@@ -13,6 +13,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const settingsButton = document.getElementById("settings");
+    const overviewSection = document.getElementById("mainContent");
+    const settingsSection = document.getElementById("settingsSection");
+    const returnButton = document.getElementById("returnToOverview");
+    const overviewButton = document.getElementById("overview");
+
+    // Alternar para Configurações
+    settingsButton.addEventListener("click", () => {
+        overviewSection.classList.remove("active");
+        overviewSection.style.display = "none";
+        settingsSection.classList.add("active");
+        settingsSection.style.display = "block";
+    });
+
+    // Retornar ao Overview
+    returnButton.addEventListener("click", () => {
+        settingsSection.classList.remove("active");
+        settingsSection.style.display = "none";
+        overviewSection.classList.add("active");
+        overviewSection.style.display = "block";
+    });
+
+    // Botão Overview
+    overviewButton.addEventListener("click", () => {
+        settingsSection.classList.remove("active");
+        settingsSection.style.display = "none";
+        overviewSection.classList.add("active");
+        overviewSection.style.display = "block";
+    });
+});
+
 // Inicializa o gráfico de Medição em Tempo Real
 const realTimeCtx = document.getElementById("realTimeChart").getContext("2d");
 const realTimeChart = new Chart(realTimeCtx, {
@@ -154,6 +186,27 @@ const gaugeChart = new Chart(document.getElementById("gaugeChart"), {
             tooltip: { enabled: false },
         },
     },
+});
+
+// Menu Ativo
+document.addEventListener("DOMContentLoaded", () => {
+    const menuItems = document.querySelectorAll(".menu-item");
+    menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            menuItems.forEach((el) => el.classList.remove("ativo"));
+            item.classList.add("ativo");
+        });
+    });
+
+    document.getElementById("settings").addEventListener("click", () => {
+        document.getElementById("mainContent").classList.remove("active");
+        document.getElementById("settingsSection").classList.add("active");
+    });
+
+    document.getElementById("returnToOverview").addEventListener("click", () => {
+        document.getElementById("settingsSection").classList.remove("active");
+        document.getElementById("mainContent").classList.add("active");
+    });
 });
 
 // Função para calcular e atualizar o gráfico de Aproveitamento
