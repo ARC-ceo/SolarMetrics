@@ -269,7 +269,7 @@ body {
     flex-direction: column;
     align-items: center;
     height: 300px;
-    gap: 20px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto 40px auto;
     opacity: 0;
@@ -289,14 +289,16 @@ body {
     border: 2px solid #E4FF00;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 400px;
+    height: 85px;
     padding: 20px;
     gap: 20px;
     margin-left: 30px;
 }
 
 .foto-integrante {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     object-fit: cover;
 }
@@ -678,13 +680,18 @@ button[type="button"]:hover {
     margin: 20px;
 }
 
-.info_texto{
-    width: 60%;
-    font-family: 'Kanit';
-    font-style: normal;
-    font-weight: 400;
+.info_texto {
+    width: 60%;                        /* Define a largura da .info_texto */
+    font-family: 'Kanit';               /* Define a fonte */
+    font-style: normal;                 /* Define o estilo da fonte */
+    font-weight: 400;                   /* Define o peso da fonte */
+    text-align: left;                   /* Alinha o texto à esquerda */
+    margin: 0;                          /* Remove qualquer margem extra */
+    padding: 0;                         /* Remove qualquer padding extra */
+    line-height: 1;                     /* Define a altura da linha para remover espaçamento extra entre as linhas */
+    letter-spacing: normal;             /* Define o espaçamento entre as letras para o padrão */
+    word-spacing: normal;               /* Define o espaçamento entre as palavras para o padrão */
 }
-
 .links {
     width: 40%;                         /* Define a largura da .links para 40% */
     display: flex;                      /* Torna o contêiner um flex container */
@@ -698,8 +705,13 @@ button[type="button"]:hover {
 .links img {
     display: block;
     align-items: center;
-    width: 40px;                       /* Ajuste o tamanho da imagem (pode mudar conforme necessidade) */
+    width: 33px;                       /* Ajuste o tamanho da imagem (pode mudar conforme necessidade) */
     height: auto;
+}
+
+.links img:hover {
+    transform: scale(1.2);
+    /* Aumenta levemente o ícone ao passar o mouse */
 }
 
 .caixamenor {
