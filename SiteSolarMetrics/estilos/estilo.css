@@ -564,6 +564,10 @@ button[type="submit"]:hover {
 /* Seção Sobre */
 
 .bannersobre {
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -585,7 +589,6 @@ button[type="submit"]:hover {
     padding: 0px;
     border-radius: 8px;
     text-align: center;
-
 }
 
 .bannersobre h2 span {
@@ -665,7 +668,7 @@ button[type="submit"]:hover {
 }
 
 .caixamenor h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     text-shadow: black 0.1em 0.1em 0.2em;
     margin-bottom: 10px;
