@@ -116,14 +116,20 @@ def calcular_lucro_e_porcentagem(dados_energia):
     print(f"Porcentagem de uso: {porcentagem:.2f}%")
 
 
-def registrar_usuario(arquivo,usuarios,nome,instalacao):
+def registrar_usuario(arquivo, usuarios, nome, instalacao):
     if usuarios:
         proximo_id = max(usuarios.keys()) + 1
     else:
         proximo_id = 1  
     usuarios_info = {
-        "nome" : nome,
-        "instalacao" : instalacao 
+        "nome": nome,
+        "instalacao": instalacao,
+        "relatorio": {
+            "data_inicio": None,
+            "data_fim": None,
+            "geracao": None,
+            "consumo": None
+        }
     }
     usuarios[proximo_id] = usuarios_info
     with open(arquivo, "w", newline="") as f:
@@ -132,10 +138,13 @@ def registrar_usuario(arquivo,usuarios,nome,instalacao):
             escritor_csv.writerow([
                 id_usuario,
                 dados["nome"],
-                dados["instalacao"]
-            ])        
-    return (usuarios)
-
+                dados["instalacao"],
+                dados["relatorio"]["data_inicio"],
+                dados["relatorio"]["data_fim"],
+                dados["relatorio"]["geracao"],
+                dados["relatorio"]["consumo"]
+            ])
+    return usuarios
 
 def adicionar_relatorio(usuarios, id_usuario, dados_energia, arquivo):
     usuarios[id_usuario]["relatorio"] = dados_energia  
