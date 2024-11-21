@@ -94,7 +94,7 @@ body {
 .banner {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 126vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -417,12 +417,15 @@ body {
     border-bottom: 2px solid white;
     /* borda inferior branca quando desativada */
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
     font-family: 'LFT Etica';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 10px;
+}
+
+input::placeholder {
+    color: #ffffff; /* Cor do texto do placeholder */
 }
 
 .botaologin.ativo {
@@ -454,7 +457,7 @@ body {
 }
 
 .formulario h2 span {
-    color: yellow;
+    color: rgb(248, 248, 0);
 }
 
 .credenciais h2 {
@@ -468,6 +471,9 @@ body {
 }
 
 .titulocaixalogin {
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;   
     padding: 10px;
     margin: 10px;
     display: flex;
@@ -478,15 +484,16 @@ body {
 input[type="text"],
 input[type="password"],
 input[type="email"],
+
 textarea {
     width: 92%;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 2px solid yellow;
-    background-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
     font-size: 14px;
+    background-color: rgba(226, 226, 226, 0.156);
     color: white;
 }
 
@@ -506,6 +513,20 @@ input[type="checkbox"]+label {
     color: white;
 }
 
+input {
+    border: 2px solid #ccc; /* Borda padrão dos campos */
+    border-radius: 4px;      /* Bordas arredondadas */
+    padding: 10px;           /* Espaçamento interno */
+    font-size: 16px;         /* Tamanho da fonte */
+    transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
+}
+
+/* Quando o campo estiver em foco (selecionado), a borda será amarela */
+input:focus {
+    border-color: #ffe600;  /* Cor da borda amarela */
+    outline: none;          /* Remove o contorno padrão */
+}
+
 /* Estilo da caixa da checkbox */
 input[type="checkbox"]+label:before {
     content: "";
@@ -516,9 +537,9 @@ input[type="checkbox"]+label:before {
     height: 20px;
     border: 2px solid yellow;
     /* Borda amarela */
-    background-color: transparent;
+    background-color: rgba(255, 251, 0, 0.055);
     /* Fundo transparente */
-    border-radius: 3px;
+    border-radius: 5px;
     /* Arredonda as bordas levemente */
     box-sizing: border-box;
     transition: background-color 0.3s, border-color 0.3s;
@@ -529,36 +550,41 @@ input[type="checkbox"]:checked+label:before {
     background-color: yellow;
     /* Cor de fundo amarela quando marcada */
     border-color: yellow;
+    
     /* Mantém a borda amarela */
 }
 
 /* ícone de verificação */
 input[type="checkbox"]:checked+label:after {
-    content: "✔";
     /* Ícone de verificação */
     position: absolute;
     left: 4px;
     top: 0;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     /* Cor do ícone */
 }
 
+
 button[type="button"] {
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: transparent;
+    background-color: yellow;
     border: 2px solid yellow;
-    color: yellow;
+    color: rgb(0, 0, 0);
     border-radius: 50px;
-    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="button"]:hover {
+    color: yellow;
     background-color: yellow;
-    color: black;
+    background-color: transparent;
 }
 
 /* Seção Sobre */
