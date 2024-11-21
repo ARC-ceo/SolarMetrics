@@ -692,6 +692,7 @@ button[type="button"]:hover {
     letter-spacing: normal;             /* Define o espaçamento entre as letras para o padrão */
     word-spacing: normal;               /* Define o espaçamento entre as palavras para o padrão */
 }
+
 .links {
     width: 40%;                         /* Define a largura da .links para 40% */
     display: flex;                      /* Torna o contêiner um flex container */
