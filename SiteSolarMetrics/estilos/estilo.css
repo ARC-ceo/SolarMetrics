@@ -282,11 +282,12 @@ body {
 }
 
 .info {
-    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    background: rgba(0, 0, 0, 0.50);
     color: white;
     border-radius: 8px;
-    border: 2px solid #9F9B9B;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #E4FF00;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 400px;
     padding: 20px;
     gap: 20px;
@@ -675,6 +676,30 @@ button[type="button"]:hover {
     width: 200px;
     height: 200px;
     margin: 20px;
+}
+
+.info_texto{
+    width: 60%;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.links {
+    width: 40%;                         /* Define a largura da .links para 40% */
+    display: flex;                      /* Torna o contêiner um flex container */
+    flex-direction: column;             /* Coloca os ícones em coluna (um abaixo do outro) */
+    justify-content: center;            /* Alinha verticalmente no centro da .links */
+    align-items: flex-end;
+    gap: 10px;                            /* Alinha a .links à direita do contêiner pai */                               /* Corrige o deslocamento e centraliza verticalmente */
+}
+
+/* Estilo das imagens dentro dos links */
+.links img {
+    display: block;
+    align-items: center;
+    width: 40px;                       /* Ajuste o tamanho da imagem (pode mudar conforme necessidade) */
+    height: auto;
 }
 
 .caixamenor {
