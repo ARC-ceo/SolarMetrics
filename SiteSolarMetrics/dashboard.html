@@ -14,14 +14,14 @@
     <aside class="sidebar" id="sidebar">
         <!-- Espaço do Usuário -->
         <div class="user-info">
-            <img src="imagens/rafael.png" alt="Avatar do Usuário" class="user-avatar">
+            <img src="imagens/rafael.png" alt="Avatar do Usuário" class="user-avatar" title="imagem avatar do usuario">
             <div class="user-details">
                 <h3>Rafael Nonato</h3>
                 <p>Residencial</p>
             </div>
             <a href="index.html">
                 <button class="logout-btn">
-                    <img src="imagens/logout.png" alt="Logout">
+                    <img src="imagens/logout.png" alt="Logout" title="botão Sair">
                 </button>
             </a>
         </div>
@@ -69,12 +69,12 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img src="imagens/cloud-icon.png" alt="Clima">
+                    <img src="imagens/cloud-icon.png" alt="Clima" title="Clima">
                     <h3>São Paulo</h3>
                     <p>17°C</p>
                 </div>
                 <div class="card">
-                    <img src="imagens/savings-icon.png" alt="Economia">
+                    <img src="imagens/savings-icon.png" alt="Economia" title="Economia">
                     <h3>Economia no mês</h3>
                     <p>R$ 45,00</p>
                 </div>
@@ -122,20 +122,20 @@
                 <div class="settings-form">
                     <form id="userProfileForm">
                         <h3>Perfil do Usuário</h3>
-                            <label for="userName">Nome:</label>
-                            <input type="text" id="userName" name="userName" value="Rafael Nonato">
+                        <label for="userName">Nome:</label>
+                        <input type="text" id="userName" name="userName" value="Rafael Nonato">
 
-                            <label for="userEmail">Email:</label>
-                            <input type="email" id="userEmail" name="userEmail" value="Rafael.Nonato@gmail.com">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" name="userEmail" value="Rafael.Nonato@gmail.com">
 
-                            <div class="half-input">
-                                <label for="userPhone">Celular:</label>
-                                <input type="tel" id="userPhone" name="userPhone" value="11 94032-8732">
-                            </div>
-                            <div class="half-input">
-                                <label for="userLandline">Telefone Fixo:</label>
-                                <input type="tel" id="userLandline" name="userLandline" value="11 5021-8732">
-                            </div>
+                        <div class="half-input">
+                            <label for="userPhone">Celular:</label>
+                            <input type="tel" id="userPhone" name="userPhone" value="11 94032-8732">
+                        </div>
+                        <div class="half-input">
+                            <label for="userLandline">Telefone Fixo:</label>
+                            <input type="tel" id="userLandline" name="userLandline" value="11 5021-8732">
+                        </div>
                     </form>
 
                     <form id="installationForm">
@@ -176,6 +176,33 @@
                         <button type="button" id="uploadPhotoButton">Enviar Foto</button>
                         <button type="button" id="removePhotoButton">Remover Foto</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova seção de Alertas -->
+        <section class="dashboard-alerts" id="alertsSection">
+            <div class="alerts-header">
+                <h2>Notificações</h2>
+                <div class="tab-container">
+                    <button class="tab active" id="allTab">Todos</button>
+                    <button class="tab" id="unreadTab">Não lidos</button>
+                </div>
+            </div>
+            <div class="alerts-content">
+                <div class="alert">
+                    <div class="alert-info">
+                        <h3>Instalação Residencial</h3>
+                        <p>A produção foi afetada devido às condições climáticas desfavoráveis.</p>
+                    </div>
+                    <span class="alert-date">5 de Novembro</span>
+                </div>
+                <div class="alert unread">
+                    <div class="alert-info">
+                        <h3>Instalação Residencial</h3>
+                        <p>Parabéns! No mês passado, você economizou R$200 na sua conta de energia.</p>
+                    </div>
+                    <span class="alert-date">Mês passado</span>
                 </div>
             </div>
         </section>
