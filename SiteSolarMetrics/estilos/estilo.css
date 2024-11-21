@@ -324,13 +324,27 @@ body {
 .footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 20px 50px;
     background-color: #2e2e2e;
 }
 
+.texto-logo {
+    display: flex;
+    flex-direction: column;   
+    gap: 0px;
+}
+
+#copyright {
+    font-family: 'LFT Etica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #9F9B9B; 
+}
+
 .footer img {
-    width: 80px;
+    width: 140px;
+    margin-bottom: 20px;
 }
 
 .footer p {
@@ -887,6 +901,11 @@ button[type="submit"]:hover {
 
     .logo img {
         width: 100px;
+    }
+
+    #logo-arc {
+        width: 500px;   
+        height: 200px;
     }
 
     .container-servicos {
