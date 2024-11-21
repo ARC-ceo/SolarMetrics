@@ -3,34 +3,55 @@ let currentConsumption = 0; // Consumo atual
 let currentGeneration = 0; // Geração atual
 
 document.addEventListener("DOMContentLoaded", () => {
-    const settingsButton = document.getElementById("settings");
-    const overviewSection = document.getElementById("mainContent");
-    const settingsSection = document.getElementById("settingsSection");
-    const returnButton = document.getElementById("returnToOverview");
-    const overviewButton = document.getElementById("overview");
+    const menuItems = document.querySelectorAll(".menu-item");
+    const sections = {
+        overview: document.getElementById("mainContent"),
+        notifications: document.getElementById("notificationsSection"),
+        settings: document.getElementById("settingsSection"),
+    };
 
-    // Alternar para Configurações
-    settingsButton.addEventListener("click", () => {
-        overviewSection.classList.remove("active");
-        overviewSection.style.display = "none";
-        settingsSection.classList.add("active");
-        settingsSection.style.display = "block";
+    menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const target = item.id;
+
+            // Alterna a seção visível
+            for (const section in sections) {
+                if (section === target) {
+                    sections[section].classList.add("active");
+                    sections[section].style.display = "block";
+                } else {
+                    sections[section].classList.remove("active");
+                    sections[section].style.display = "none";
+                }
+            }
+
+            // Atualiza a navegação ativa
+            menuItems.forEach((el) => el.classList.remove("ativo"));
+            item.classList.add("ativo");
+        });
     });
 
-    // Retornar ao Overview
-    returnButton.addEventListener("click", () => {
-        settingsSection.classList.remove("active");
-        settingsSection.style.display = "none";
-        overviewSection.classList.add("active");
-        overviewSection.style.display = "block";
+    // Funcionalidade para alternar abas na seção de alertas
+    const allTab = document.getElementById("allTab");
+    const unreadTab = document.getElementById("unreadTab");
+    const alerts = document.querySelectorAll(".alert");
+
+    allTab.addEventListener("click", () => {
+        allTab.classList.add("active");
+        unreadTab.classList.remove("active");
+        alerts.forEach((alert) => (alert.style.display = "flex"));
     });
 
-    // Botão Overview
-    overviewButton.addEventListener("click", () => {
-        settingsSection.classList.remove("active");
-        settingsSection.style.display = "none";
-        overviewSection.classList.add("active");
-        overviewSection.style.display = "block";
+    unreadTab.addEventListener("click", () => {
+        unreadTab.classList.add("active");
+        allTab.classList.remove("active");
+        alerts.forEach((alert) => {
+            if (alert.classList.contains("unread")) {
+                alert.style.display = "flex";
+            } else {
+                alert.style.display = "none";
+            }
+        });
     });
 });
 
@@ -187,9 +208,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    document.getElementById("overview").addEventListener("click", () => {
+        document.getElementById("settingsSection").classList.remove("active");
+        document.getElementById("alertsSection").classList.remove("active");
+        document.getElementById("mainContent").classList.add("active");
+    });
+
     document.getElementById("settings").addEventListener("click", () => {
         document.getElementById("mainContent").classList.remove("active");
+        document.getElementById("alertsSection").classList.remove("active");
         document.getElementById("settingsSection").classList.add("active");
+    });
+
+    document.getElementById("notifications").addEventListener("click", () => {
+        document.getElementById("mainContent").classList.remove("active");
+        document.getElementById("settingsSection").classList.remove("active");
+        document.getElementById("alertsSection").classList.add("active");
     });
 
     document.getElementById("returnToOverview").addEventListener("click", () => {

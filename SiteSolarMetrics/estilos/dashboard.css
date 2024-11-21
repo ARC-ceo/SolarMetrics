@@ -717,14 +717,161 @@ canvas {
     margin-right: 20px;
 }
 
+/* Estilo da nova seção de Alertas */
+.dashboard-alerts {
+    display: none; /* Inicialmente escondido */    
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.dashboard-alerts.active {
+    display: block;
+    width: 80vw;
+    height: 80vh;
+    flex-shrink: 0;
+}
+
+.alerts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.alerts-header h2 {
+    font-size: 1.5rem;
+    color: #e1e417;
+}
+
+.tab-container {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: #e1e417;
+    color: #111;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+.alerts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.603);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.alert.unread {
+    background-color: green;
+    color: #111;
+}
+
+.alert-info h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.alert-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.alert-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+@media (max-width: 1920px){
+    .dashboard-alerts.active {
+        display: block;
+        width: 75vw;
+        height: 80vh;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 1500px){
+    .dashboard-alerts.active {
+        display: block;
+        width: 75vw;
+        height: 80vh;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 1100px){
+    .dashboard-alerts.active {
+        display: block;
+        width: 60vw;
+        height: 80vh;
+        flex-shrink: 0;
+    }
+}
+
+
 /* Ajustes para telas médias (768px) */
 @media (max-width: 768px) {
+    .body{
+        overflow-x: hidden;
+    }
+
     .dashboard-container {
         padding: 15px;
+        margin-left: 150px;
+    }
+    
+    .dashboard-charts {
+        grid-template-columns: 1fr; /* Um gráfico por linha */
+        gap: 15px;
+    }
+
+    .info-card {
+        padding: 15px; /* Reduz o padding */
+    }
+
+    canvas {
+        max-width: 50px; /* Garante que o gráfico não ultrapasse a largura do container */
+        height: auto; /* Ajusta a altura dinamicamente */
     }
 
     .sidebar {
-        width: 180px;
+        width: 120px;
+    }
+
+    .user-info h3{
+        font-size: 12px;
+    }
+
+    .user-info p{
+        font-size: 8px;
     }
 
     .footer-logo{
@@ -736,31 +883,81 @@ canvas {
     .dashboard-charts,
     .dashboard-generation {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: 15px;
-        max-width: fit-content;
+        max-width: 360px;
     }
 
     .menu {
         gap: 5px;
     }
 
+    .menu-item{
+        width: 50%;
+        font-size: 8px;
+    }
+
     .card,
     .info-card,
     .generation-card {
         width: 100%;
-        ;
+    }
+
+    .dashboard-alerts.active {
+        display: block;
+        width: 68vw;
+        height: 90%;
+        flex-shrink: 0;
+    }
+
+    .alerts-header h2{
+        font-size: 12px;
+    }
+
+    .alert-info p{
+        font-size: 8px;
+    }
+
+    .alert-info h3{
+        font-size: 8px;
+    }
+
+    .alert-date{
+        font-size: 6px;
+    }
+
+    .tab{
+        font-size: 8px;
+    }
+
+    .dashboard-charts {
+        grid-template-columns: 1fr; /* Um gráfico por linha */
+        gap: 15px;
+    }
+
+    .info-card {
+        padding: 15px; /* Reduz o padding */
+    }
+
+    canvas {
+        max-width: 100%; /* Garante que o gráfico não ultrapasse a largura do container */
+        height: auto; /* Ajusta a altura dinamicamente */
     }
 }
 
 /* Ajustes para telas pequenas (600px) */
 @media (max-width: 600px) {
+    *{
+        overflow-x: hidden;
+    }
+
     .dashboard-container {
         padding: 10px;
+        margin-left: 20px;
     }
 
     .sidebar {
-        width: 100%;
+        width: 30%;
         height: auto;
         position: relative;
     }
@@ -786,8 +983,37 @@ canvas {
     .info-card,
     .generation-card {
         margin-bottom: 15px;
-        max-height: fit-content;
-        max-width: fit-content;
+        max-width: 250px;
+    }
+
+    .gaugeChart{
+        width: auto;
+        height: auto;
+    }
+
+    .dashboard-alerts.active {
+        display: block;
+        width: 250px;
+    }
+
+    .alerts-header h2{
+        font-size: 12px;
+    }
+
+    .alert-info p{
+        font-size: 8px;
+    }
+
+    .alert-info h3{
+        font-size: 8px;
+    }
+
+    .alert-date{
+        font-size: 6px;
+    }
+
+    .tab{
+        font-size: 8px;
     }
 }
 
